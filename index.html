@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XR-17 Mobile Manipulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <aside id="ui">
+        <section class="panel hero">
+            <p class="eyebrow">Industrial Robotic Automation</p>
+            <h1>XR-17 Mobile Manipulator</h1>
+            <p class="description">Matte black mobile robotic arm with a precision gripper, studio-lit to feel closer to a Blender Cycles or Unreal Engine product render.</p>
+        </section>
+        <section class="panel controls">
+            <div class="control-group">
+                <label>Turret</label>
+                <input type="range" id="base-slider" min="-180" max="180" value="0">
+            </div>
+            <div class="control-group">
+                <label>Shoulder</label>
+                <input type="range" id="shoulder-slider" min="-75" max="30" value="-40">
+            </div>
+            <div class="control-group">
+                <label>Elbow</label>
+                <input type="range" id="elbow-slider" min="10" max="120" value="62">
+            </div>
+            <div class="control-group">
+                <label>Wrist</label>
+                <input type="range" id="wrist-slider" min="-45" max="60" value="18">
+            </div>
+            <div class="control-group">
+                <label>Gripper</label>
+                <input type="range" id="gripper-slider" min="0" max="100" value="38">
+            </div>
+        </section>
+    </aside>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

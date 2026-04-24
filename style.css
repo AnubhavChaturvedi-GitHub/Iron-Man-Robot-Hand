@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --panel-bg: rgba(248, 249, 251, 0.78);
+    --panel-border: rgba(31, 35, 42, 0.1);
+    --text-primary: #15181d;
+    --text-muted: #6e7480;
+    --accent: #efb31d;
+}
+
+body {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 38%),
+        linear-gradient(160deg, #f6f7f8 0%, #eceef1 46%, #dde1e6 100%);
+    color: var(--text-primary);
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#ui {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 28px;
+}
+
+.panel {
+    border: 1px solid var(--panel-border);
+    background: var(--panel-bg);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 22px 70px rgba(16, 18, 23, 0.08);
+}
+
+.hero {
+    max-width: 420px;
+    padding: 18px 20px 20px;
+    border-radius: 24px;
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.hero h1 {
+    max-width: 320px;
+    font-size: clamp(24px, 3.6vw, 42px);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.description {
+    margin-top: 14px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.controls {
+    pointer-events: auto;
+    width: min(92vw, 720px);
+    padding: 16px 18px;
+    border-radius: 22px;
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    min-width: 104px;
+}
+
+.control-group label {
+    color: var(--text-muted);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+@media (max-width: 860px) {
+    #ui {
+        padding: 18px;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .hero {
+        max-width: none;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .control-group {
+        min-width: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 560px) {
+    .hero {
+        padding: 16px 16px 18px;
+        border-radius: 20px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .controls {
+        padding: 14px;
+        border-radius: 20px;
+    }
+
+    .control-group {
+        min-width: 100%;
+    }
+}
